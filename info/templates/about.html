@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% load static %}
+           
+         <!-- end header inner -->
+      
+      <!-- end banner -->
+      <!-- about -->
+      {% block main %}
+      <div class="about">
+         <div class="container_width">
+            <div class="row d_flex grig">
+               {% for about in abouts %}
+               <div class="col-md-6">
+                  <div class="about_img">
+                     <figure><img src={{about.image.url}} alt="#"/>
+                     </figure>
+                  </div>
+               </div>
+               {% endfor %}
+               {% for about in abouts %}
+               <div class="col-md-6 order">
+                  <div class="titlepage text_align_left">
+                     <h2>{{about.title}}</h2>
+                     <p>{{about.description}}</p>
+                     <a class="read_more" href="{% url 'info:about-detail' id=about.id %}">Read More</a>
+                  </div>
+               </div>
+               {% endfor %}
+            </div>
+         </div>
+      </div>
+      {% endblock main %}
+      <!-- end about -->
+      <!--  footer -->
+     

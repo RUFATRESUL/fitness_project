@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+{% load static %}
+      <!-- end banner -->
+      <!-- appointment -->
+{% block main %}
+      <div class="appointment">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12 ">
+                  <div class="titlepage text_align_center">
+                     <h2>Contact Us</h2>
+                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu</p>
+                  </div>
+               </div>
+               <div class="col-md-12">
+                  <form class="main_form" method="post" action="{% url 'blog:contact_view' %}">
+                     {% csrf_token %}
+                     <div class="row">
+                        <div class="col-md-6 ">
+                           <input class="form_control" placeholder="Your name" type="type" name="name" > 
+                        </div>
+                        <div class="col-md-6">
+                           <input class="form_control" placeholder="Email" type="type" name="email"> 
+                        </div>
+                        <div class="col-md-6">
+                           <input class="form_control" placeholder="Phone Number" type="type" name="phone">                          
+                        </div>
+                        <div class="col-md-6">
+                           <input class="form_control" placeholder="Select Massage spa" type="type" name="massage">                          
+                        </div>
+                        <div class="col-md-6 ">
+                           <input class="form_control" placeholder="Time" type="type" name="time"> 
+                        </div>
+                        <div class="col-md-6">
+                           <input type="text" class="form_control"  placeholder="date" name="date" >
+                        </div>
+                        <div class="col-md-12">
+                           <textarea style=" color: #d0d0cf;" class="textarea" placeholder="Message" type="type" name="message" >message </textarea>
+                        </div>
+                        <div class="col-md-12">
+                           <button type="submit" class="send_btn">Send Now</button>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+      {% endblock main %}
+      <!-- end appointment -->
+      <!--  footer -->
+     

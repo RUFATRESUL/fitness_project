@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block main %}
+<article>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>{{blog.title}}</p>
+                <h2>{{blog.description}}</h2>
+                <h5 class="section">{{blog.content}}</h5>
+                <a href="#">
+                    <img class="img-responsive" width='600px' height='400px'  src= {{blog.image.url}}  alt="">
+                </a>
+
+
+                </div>
+            </div>
+        </div>
+</article>
+
+{% endblock main %}

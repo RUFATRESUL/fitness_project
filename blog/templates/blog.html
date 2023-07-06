@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+{% load static %}
+      
+         <!-- end header inner -->
+
+      
+      <!-- blog -->
+   {% block main %}
+      <div class="blog">
+         <div class="container">
+
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage text_align_center ">
+                     <h2>Latest Blog</h2>
+                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu</p>
+                  </div>
+               </div>
+            </div>
+            <div class="row d-flex">
+               {% for blog in blogs %}
+               <div class=" col-4 ">
+                  
+                  <div class="latest">
+                     <figure><img src={{blog.image.url}} alt="#"/></figure>
+                     <span>{{blog.title}}</span>
+                     <div class="nostrud">
+                        <h3>{{blog.description}}</h3>
+                        <p>{{blog.content}}</p>
+                        {% with blog.author.user.username as author_username %}
+                       <p class="post-meta">Posted by: <a href="?author={{ author_username }}">{{ blog.author.user.get_full_name }}</a></p>
+                      
+                       {% endwith %}
+                     
+                        <a class="read_more" href="{% url 'blog:blog-detail' id=blog.id %}">Read More</a>
+                        
+                     </div>
+                  </div>
+               </div>
+               {% endfor %}
+               {% for tag in tags %}
+               <a href="?tag={{tag.title}}" class="badge ml-4 bg-secondary">{{tag.title}}</a>
+           {% endfor %}
+            </div>
+         </div>
+      </div>
+   {% endblock main %}
+      <!-- end blog -->
+      <!--  footer -->
+     
